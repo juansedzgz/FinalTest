@@ -16,4 +16,4 @@ La mayor parte de estre projecto fue realizado de manera local, por ende, explic
 14. Finalmente implementamos la lógica del archivo llamado Global.asax.cs, la cual dictará la ejecución al momento que iniciemos nuestra aplicación.
 15. Con la ayuda de POSTMAN haremos las pruebas correspondientes para cada una de nuestras peticiones y documentaremos nuestros resultados.
 
-16. Gracias.
+Gracias.
