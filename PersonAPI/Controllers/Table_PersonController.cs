@@ -28,7 +28,7 @@ namespace PersonAPI.Controllers
 
         // GET: api/Table_Person/5
         [HttpGet]
-        [Route("{id:int}")]
+        [Route("{id:int}", Name = "GetTablePersonById")]
         [ResponseType(typeof(Table_Person))]
         public IHttpActionResult GetTable_Person(int id)
         {
@@ -126,7 +126,7 @@ namespace PersonAPI.Controllers
             db.Table_Person.Add(table_Person);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = table_Person.Id }, table_Person);
+            return CreatedAtRoute("GetTablePersonById", new { id = table_Person.Id }, table_Person);
         }
 
         // DELETE: api/Table_Person/5

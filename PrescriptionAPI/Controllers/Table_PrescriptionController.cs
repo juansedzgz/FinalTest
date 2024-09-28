@@ -28,7 +28,7 @@ namespace PrescriptionAPI.Controllers
 
         // GET: api/Table_prescription/5
         [HttpGet]
-        [Route("{id:int}")]
+        [Route("{id:int}", Name = "GetTablePrescriptionById")]
         [ResponseType(typeof(Table_Prescription))]
         public async Task<IHttpActionResult> GetTable_Prescription(int id)
         {
@@ -97,7 +97,7 @@ namespace PrescriptionAPI.Controllers
         [HttpPost]
         [Route("")]
         [ResponseType(typeof(Table_Prescription))]
-        public async Task<IHttpActionResult> PostTable_Prescription(Table_Prescription table_Prescription)
+        public IHttpActionResult PostTable_Prescription(Table_Prescription table_Prescription)
         {
             if (!ModelState.IsValid)
             {
@@ -105,9 +105,9 @@ namespace PrescriptionAPI.Controllers
             }
 
             db.Table_Prescription.Add(table_Prescription);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = table_Prescription.Id }, table_Prescription);
+            return CreatedAtRoute("GetTablePrescriptionById", new { id = table_Prescription.Id }, table_Prescription);
         }
 
         // DELETE: api/Table_prescription/5
