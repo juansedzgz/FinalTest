@@ -193,9 +193,9 @@ namespace AppointmentAPI.Controllers
                 // Enviar el mensaje a RabbitMQ
                 if (table_Appoint.Status == "Finished")
                 {
-                    Debug.WriteLine("-----ENTRE-----");
+                    Debug.WriteLine("-----RABBIT IN-----");
                     _producer.SendMessage("EndAppointment", encodedText);
-                    return Ok("La cita ha terminado. Por favor, ingrese la receta.");
+                    return Ok("Appointment completed. Please, prescribe the patient.");
                     //Debug.WriteLine(table_Appoint.Status + "   RabbitMQ");
                     //AppointmentEndMessage(table_Appoint); //Aquí se debe pasar la prescription
                 };
