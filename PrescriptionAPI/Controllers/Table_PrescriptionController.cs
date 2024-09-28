@@ -42,8 +42,8 @@ namespace PrescriptionAPI.Controllers
         }
 
         [HttpGet]
-        [Route("people/{id:int}")]
-        public async Task<IHttpActionResult> GetAllPeopleTable_Prescription(int id)
+        [Route("patient/{id:int}")]
+        public async Task<IHttpActionResult> GetPatientTable_Prescription(int id)
         {
             var table_Person = await db.Table_Prescription
         .Where(p => p.PatientId == id)

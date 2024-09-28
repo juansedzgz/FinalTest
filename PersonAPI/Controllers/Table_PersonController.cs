@@ -48,7 +48,7 @@ namespace PersonAPI.Controllers
         public IHttpActionResult GetTable_Doctor()
         {
             var table_Person = db.Table_Person
-        .Where(p=> p.Type == "Medico")
+        .Where(p=> p.Type == "Doctor")
         .ToList();
             if (table_Person == null)
             {
@@ -65,7 +65,7 @@ namespace PersonAPI.Controllers
         public IHttpActionResult GetTable_Patient()
         {
             var table_Person = db.Table_Person
-        .Where(p => p.Type == "Paciente") 
+        .Where(p => p.Type == "Patient") 
         .ToList();
             if (table_Person == null)
             {
